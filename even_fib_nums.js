@@ -6,12 +6,23 @@
  * @return {Number} sum
  */
 function _sumFibs( maxFibValue ) {
-  var sum = 0;
+   var sum = 0;
+  var fib = [0,1];
 
-  // do your work here
+  for(var i = fib[0]; fib[fib.length -1] <= maxFibValue; i++){
+    fib.push(fib[fib.length - 1] + fib[fib.length -2]);
+  }
 
+  for(var y = 0; y < fib.length - 1; y++){
+     if(fib[y] % 2 === 0){
+       sum += fib[y];
+     }
+   }
+   console.log(sum);
   return sum;
 }
+
+console.log(_sumFibs(100));
 
 // bonus round
 function _highestFibonacciNumber (maxFibValue){
